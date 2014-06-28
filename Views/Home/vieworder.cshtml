@@ -1,8 +1,9 @@
 ﻿@model List< maheen.Models.product>
 @{
-    ViewBag.Title = "viewallproducts";
+    ViewBag.Title = "vieworder";
     Layout = "~/Views/Shared/_LayoutView.cshtml";
 }
+
 
 @section Title
 {
@@ -38,7 +39,7 @@
     <li class="first">Primary Office</li>
                         <li> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></li>
                         <li>Phone: 010-010-6600</li>
-                        <li><a href="/Cart/shoppingcart">View Cart</a></li>
+@*                        <li><a href="/Cart/shoppingcart">View Cart</a></li>*@
                         <li><a href="/Home/contact">Contact Us</a></li>
     }
 @section BottomSidebar
@@ -55,17 +56,7 @@
     }
 @section Slider
 {
-   <img src="~/images/slider/02.jpg" alt="" />
-    }
-@section Products
-{
-     <!DOCTYPE html>
-<body>
-    <div>
-     	  <h5><strong>Products </strong></h5>
-       
-            <div class="content_half float_l checkout">
-             @if(Model!=null)
+        @if(Model!=null)
 {
  foreach(var x in Model)
  {
@@ -76,56 +67,44 @@
 						<ul>
 							<li>
                                 
-								<img src="~/images/@x.imagepath" alt="Image" height="150" width="150" />
-                               
+								<img src="~/images/@x.imagepath" alt="Image" width="130" height="150" />
                                     
 								    <div class="extra-wrap" >
                                             	<h3>@x.productname</h3>
                                                 <p class="p1">Quantity: @x.quantity</p>
                                                 <p class="p1">Price: Rs: @x.price</p>
-                                         <div style="color:#0000FF" id="result"></div>
-                                        @using (Html.BeginForm("Update", "Home",FormMethod.Post))
+                                                
+
+                                                
+                                                    
+                                                    @using (Html.BeginForm("DeleteItem", "Home",FormMethod.Post))
                                                     {
                                                         @Html.Hidden("id", @x.PId);
-                                                      
-                                            <input type="submit" value="Add to cart" />
-                                                
+                                                        <button type=" submit" >Remove</button>
                                                     }
-                                              
+
+                                                     
+                                                 
                                             </div>
-                                			</li>
+
+							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
                                 }
                                 }
-
-                    
-
-                     </div>
-        @using (Html.BeginForm("vieworder", "Home",FormMethod.Post))
-           {
-                <input type="submit" value="Show Order" />
-                 }
-
-				
-      
-   <div class="cleaner h50"></div>
-        
-</div> 
-    
-        <div class="cleaner"></div>
-   
-</body>
+    }
+@section Products
+{
     @*@Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts",required:false)*@
     }
 
 @section Footer
 {
-   <p><a href="/Home/GoHome">Home</a> | <a href="/Home/viewallproducts">Products</a> | <a href="/Home/about">About</a>  | <a href="/Cart/checkout">Checkout</a> | <a href="/Home/contact">Contact Us</a>
-		</p>
+@*   <p><a href="/Home/GoHome">Home</a> | <a href="/Home/viewallproducts">Products</a> | <a href="/Home/about">About</a>  | <a href="/Cart/checkout">Checkout</a> | <a href="/Home/contact">Contact Us</a>
+		</p>*@
     }
  
-      
+

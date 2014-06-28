@@ -10,18 +10,19 @@
 
 @section header
 {
-      <a href="/Cart/shoppingcart">My Cart</a> |<a href="/Account/logout">Logout</a> 
+@*      <a href="/Cart/shoppingcart">My Cart</a> |*@
+    <a href="/Account/logout">Logout</a> 
             <p>
-            	Shopping Cart: <strong> items</strong> ( <a href="/Cart/shoppingcart">Show Cart</a> )
+@*            	Shopping Cart: <strong> items</strong> ( <a href="/Cart/shoppingcart">Show Cart</a> )*@
 		</p>
     }
 @section Menu
 {
        <ul>
                 <li><a href="/Home/index" class="selected">Home</a></li>
-                <li><a href="/Shoes/products">Products</a></li>
+                <li><a href="/Home/viewallproducts">Products</a></li>
                 <li><a href="/Home/about">About</a></li>
-                <li><a href="/Cart/checkout">Checkout</a></li>
+@*                <li><a href="/Cart/checkout">Checkout</a></li>*@
                 <li><a href="/Home/contact">Contact Us</a></li>
            
           </ul>
@@ -46,7 +47,7 @@
                 <div class="content"> 
                 	<div class="bs_box">
                     	<a href="#"><img src="~/images/02.jpg" alt="image" /></a>
-                        <h4><a href="/Shoes/products">Products</a></h4>
+                        <h4><a href="/Home/viewallproducts">Products</a></h4>
                        <div class="cleaner"></div>
                     </div>
                     </div>
@@ -68,7 +69,7 @@
 
 @section Footer
 {
-   <p><a href="/Home/index">Home</a> | <a href="/Shoes/products">Products</a> | <a href="/Home/about">About</a>  | <a href="/Cart/checkout">Checkout</a> | <a href="/Home/contact">Contact Us</a>
+   <p><a href="/Home/index">Home</a> | <a href="/Home/viewallproducts">Products</a> | <a href="/Home/about">About</a>  | <a href="/Cart/checkout">Checkout</a> | <a href="/Home/contact">Contact Us</a>
 		</p>
     }
 
